@@ -9,10 +9,11 @@ from "AwsDataCatalog"."analytics_sprabhuram"."connectionrenewals_expiring_nov22_
 where true
 and date_trunc('month',exp_date) = date('2022-12-01')
 -- and Internal_ID = '02i3a000008C1I9AAK'
+-- and Internal_ID = '02i3a000008C1I9AAK'
 )
 , current_data as (
 SELECT id
-, cx.Exp_date Expiry_Date
+,  cx.Exp_date Expiry_Date
 , cx.Month_of_Expiry
 , cx.Month_of_Expiry - INTERVAL  '1' MONTH as Month_before_expiry
 , cx.expiring_value_acv
